@@ -1,0 +1,23 @@
+<project name="ProjB" default="all">
+   
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target> 
+   <target name="mallesh">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+Remote New branch Test
+new branch added
+</project>

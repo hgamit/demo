@@ -1,0 +1,7 @@
+<project name="ProjA" default="all">
+   
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
+
+</project>

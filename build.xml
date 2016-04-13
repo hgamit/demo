@@ -1,0 +1,20 @@
+<project name="All Projects" default="all">
+   
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+      <subant target="">
+         <fileset dir="." includes="*/build.xml"/>
+      </subant>
+   </target>
+ <target name="all">
+      
+<subant target="">
+         <fileset dir="." includes="*/build.xml"/>
+      </subant>
+	  <subant target="">
+         <fileset dir="." includes="*/build.xml"/>
+      </subant><subant target="">
+         <fileset dir="." includes="*/build.xml"/>
+      </subant>
+   </target>
+</project>
