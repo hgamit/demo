@@ -243,6 +243,22 @@ namespace com.tc.frameworks.ictseos.eotrade
             set { takeValueForKey("realPortNum", value); }
         }
 
+        //ADSO-3530
+        public Decimal? tradeItemDryPhyWetQty
+        {
+            get
+            {
+                return (tradeItemDryPhy != null)? tradeItemDryPhy.wetQty : 0;
+            }
+        }
+        public Decimal? tradeItemDryPhyDryQty
+        {
+            get
+            {
+                return (tradeItemDryPhy != null) ? tradeItemDryPhy.dryQty : 0;
+            }
+        }
+
         public string riskMktCode
         {
             get { return valueForKey<string>("riskMktCode"); }
@@ -785,7 +801,8 @@ namespace com.tc.frameworks.ictseos.eotrade
             get { return valueForKey<Account>("financingBank"); }
             set { takeValueForKey("financingBank", value); }
         }
-
+        public bool isFormulaFetched=false;
+        
         public AccountAgreement accountAgreement
         {
             get { return valueForKey<AccountAgreement>("accountAgreement"); }
