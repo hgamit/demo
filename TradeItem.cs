@@ -258,6 +258,21 @@ namespace com.tc.frameworks.ictseos.eotrade
             }
         }
 
+		//ADSO-3530
+         public Decimal? tradeItemDryPhyWetQty
+         {
+             get
+             {
+                 return (tradeItemDryPhy != null) ? tradeItemDryPhy.wetQty : 0;
+             }
+         }
+         public Decimal? tradeItemDryPhyDryQty
+         {
+             get
+             {
+                 return (tradeItemDryPhy != null) ? tradeItemDryPhy.dryQty : 0;
+             }
+         }
         public string riskMktCode
         {
             get { return valueForKey<string>("riskMktCode"); }
