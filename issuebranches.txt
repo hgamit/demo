@@ -1,0 +1,20 @@
+This file is used to create issue branch for collaborative task directly from Github Site.
+Example: 
+1.	When the multiple developers working on one feature.
+2.	When the developer needs DBA’s help to fix the issue.
+3.	When the developer needs Code to be reviewed by mate.
+
+Assigned developer must add issue number in next line and create issue branch with pull request assignee set to himself. 
+Process is documented and available on Amphora Corporate Portal. 
+
+Document Link:  https://github.com/AmphoraInc/Symphony/wiki/GitHub-and-Tortoise-Git-Usage-Documentation
+Note: Branch Name could be issue number, respective to issue, feature or enhancement.
+
+- It must be in Capital Letters
+- Feature branch must start with F, e.g.,  F_ADSO-XXXX
+
+Branch Name and IssueNumbers:
+ADSO-0001
+ADSO-0010
+ADSO-2000
+F_ADSO-0002
