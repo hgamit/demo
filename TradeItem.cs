@@ -13,8 +13,6 @@ using cs.fw.eo.fetchspec;
 using cs.fw.eo;
 using System.Xml.Schema;
 using System.Xml;
-using System.IO;
-using com.tc.frameworks.ictseos.parcelshipment;
 using com.tc.frameworks.ictseos.eocredit;
 using com.tc.frameworks.ictseos.eoallocation;
 using System.Collections;
