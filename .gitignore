@@ -6,7 +6,7 @@
 *.dll
 
 #################
-## Eclipse
+#Eclipse
 #################
 
 *.pydevproject
