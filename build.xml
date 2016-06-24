@@ -38,7 +38,7 @@
          <fileset dir="." includes="*/build.xml"/>
       </subant>
        <subant target="">
-         <fileset dir="." includes="*/build1.xml"/>
+         <fileset dir="." includes="*/build2.xml"/>
       </subant>
       
    </target>
