@@ -1,4 +1,4 @@
-This file is used to create issue branch for collaborative task directly from Github Site.
+﻿This file is used to create issue branch for collaborative task directly from Github Site.
 Example: 
 1.	When the multiple developers working on one feature.
 2.	When the developer needs DBA’s help to fix the issue.
@@ -19,3 +19,4 @@ ADSO-0010
 ADSO-2000
 F_ADSO-0003 Test
 F_ADSO-0001
+ADSO-2003
