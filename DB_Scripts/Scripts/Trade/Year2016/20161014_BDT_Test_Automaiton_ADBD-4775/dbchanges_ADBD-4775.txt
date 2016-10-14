@@ -1,0 +1,45 @@
+Issue #ADSO-4774 - DB Request for ADSO-4055
+
+Project : Amphora Dev Symphony Oil
+
+Description :
+Please prepare a script as part of CS3.0 to update associated_cpty in existing inventory build draw records with related acct_num from trade. Logic is to set the acct_num from trade row related associated_trade column in inventory_build_draw column. There are three cases
+when associated_trade column has one T/O/I - fill related acct_num from trade
+when assocoated_trade has multiple TIs - fill  associated_cpty as 'Multiple'
+when associated_trade is null - fill associated_cpty as null.
+
+Below script can be used as reference, optimize it as necessary
+
+select associated_trade,
+CASE when charindex(',',associated_trade,0) > 1 or charindex('m',associated_trade,0) = 1 THEN -1  -- Cases where it has two or more TIs
+ When charindex('/',associated_trade,0) > 1 THEN substring(associated_trade,0,charindex('/',associated_trade,0))  -- one TI
+  ELSE -2 END as tradenum, 
+inv_num,inv_b_d_num into #temptable from inventory_build_draw
+
+--update invbd 
+
+update invbd set invbd.associated_cpty =  CASE WHEN tradenum =-1 THEN 'Multiple' 
+WHEN tradenum > 0 THEN convert(varchar(30),t.acct_num) 
+ELSE null END 
+
+from inventory_build_draw invbd
+inner join #temptable temp on temp.inv_num = invbd.inv_num and temp.inv_b_d_num=invbd.inv_b_d_num
+left outer join trade t on temp.tradenum=t.trade_num
+
+drop table #temptable
+
+-- Pulijala Kashyap
+
+*******************************************************************
+DB CHANGES:
+
+    Updated 'associated_cpty' column in 'inventory_build_draw' table based on the below conditions:
+	
+    
+    Case 1: 
+			when associated_trade column has one T/O/I - fill related acct_num from trade
+	Case 2:
+			when assocoated_trade has multiple TIs - fill associated_cpty as 'Multiple'
+	Case 3:
+			when associated_trade is null - fill associated_cpty as null.
+			
